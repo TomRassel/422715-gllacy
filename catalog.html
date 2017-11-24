@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
 
   	<header>
 
   		<div class="header_logo">
-  			<a href=""><img src="img/logo.svg" width="154" height="64" alt="header_logo"></a>
+  			<a href="index.html"><img src="img/logo.svg" width="154" height="64" alt="header_logo"></a>
   		</div>
 
   	  <nav>
@@ -21,46 +23,56 @@
   		</nav>
 
   		<div class="user_block">
-  		  <form action="search.php" class="finder">
-     		  <input type="search" placeholder="Что ищем?">
-     		  <button type="button" name="search"></button>
-   		  </form>
-   		  <form action="login.php" class="login">
-     		  <div class="input_data">
-          	<label for="e-mail"></label>
-          	<label for="password"></label>
-          	<input name="mail" placeholder="Электронная почта" id="e-mail">
-          	<input name="pass" placeholder="Пароль" id="password">
-        	</div>
-     		  <div class="button">
-     		   	<input type="submit" value="Войти">
-     		  </div>
-     		  <ul class="reg">
-     		   	<li><a href="#">Забыли пароль?</a></li>
-     		   	<li><a href="#">Новая регистрация</a></li>
-     		  </ul>
-   		  </form>
-        <a class="user_cart" href="#">2 товара</a>
-          <div class="cart_hov">
-            <div class="cart_item">
-              <input type="button" name="del_item" value="del_item">
-              <div class="ice_cart">
-                <img src="#" alt="small_ice">
-              </div> 
-              <a href="#">Пломбир с апельсиновым джемом</a>
-              <span>1,5 кг х 200 руб. 300 pуб.</span>
-            </div>
-            <div class="cart_item">
-              <input type="button" name="del_item" value="del_item">
-              <div class="ice_cart">
-                <img src="#" alt="small_ice">
-              </div> 
-              <a href="#">Клубничный пломбир с присыпкой из белого шоколада</a>
-              <span>1,5 кг х 300 руб. 450 pуб.</span>
-            </div>
+  		  <form action="https://echo.htmlacademy.ru" class="user-block-finder">
+            <label class="visually-hidden" for="search-field">Поиск</label>
+            <input type="search"  id="search-field" placeholder="Что ищем?">
+            <button type="button" name="search"></button>
+        </form>
+   		  <form action="https://echo.htmlacademy.ru" class="user-block-login">
+          <div class="input_data">
+            <label class="visually-hidden" for="e-mail">Ваша электронная почта</label>
+            <label class="visually-hidden" for="password">Пароль для электронной почты</label>
+            <input name="mail" placeholder="Электронная почта" id="e-mail">
+            <input name="pass" placeholder="Пароль" id="password">
           </div>
-        </div>
-        <p class="phone">C 10 до 20, ежедневно 8 812 450-25-25</p>
+          <input class="button" type="submit" value="Войти">
+          <ul class="reg">
+            <li><a href="#">Забыли пароль?</a></li>
+            <li><a href="#">Новая регистрация</a></li>
+          </ul>
+        </form>
+            <a href="#" class="cart-link" aria-label="Корзина">2 товара</a>
+            <div class="cart-wrapper">
+              <h2 class="visually-hidden">В вашей корзине есть:</h2>
+              <table class="cart-item-description">
+                <tr class="orange-jam">
+                  <td class="delete-item">
+                    <button type="button" class="delete-item-button" aria-label="Удалить."></button>
+                  </td>
+                  <td class="table-image"><img src="img/min-icecreams/icecream-1.min.jpg" width="33" height="33" alt="ice-cream"></td>
+                  <td class="table-item-name">Пломбир с апельсиновым джемом</td>
+                  <td class="table-item-weight">1,5 кг х <span class="cart-item-price">200 руб.</span></td>
+                  <td class="table-item-price">300руб.</td>
+                </tr>
+                <tr class="strawberry-white-chocolate">
+                  <td class="delete-item">
+                    <button type="button" class="delete-item-button" aria-label="Удалить."></button>
+                  </td>
+                  <td class="table-image"><img src="img/min-icecreams/icecream-3.min.jpg" width="33" height="33" alt="ice-cream"></td>
+                  <td class="table-item-name">Клубничный пломбир с присыпкой из белого шоколада</td>
+                  <td class="table-item-weight">1,5 кг х <span class="cart-item-price">300 руб.</span></td>
+                  <td class="table-item-price">450руб.</td>
+                </tr>
+              </table>
+              <hr class="cart-underline">
+              <span class="cart-price">Итого: 750 руб.</span>
+              <a href="#" class="button">Оформить заказ</a>
+            </div>
+        <p class="phone-number">
+            <b class="visually-hidden">Наш номер телефона:</b>
+            С 10 до 20, ежедневно<br>
+            <span class="number-itself">8 812 450-25-25</span>
+        </p>
   		
   	</header>
 
@@ -70,15 +82,15 @@
           <ul>
             <li><a href ="#">Главная</a></li>
             <li><a href ="#">Каталог</a></li>
-            <li><span>Сливочное</span></li>
+            <li class="breadcumbs-active"><span>Сливочное</span></li>
           </ul>
         </nav>
         <h1 class="title"> Сливочное мороженое</h1>
 
     <div class="filter_item">
+      <h2 class="visually-hidden">Фильтры мороженого</h2>
 
-      <form action="filter.php" class="sort">
-
+      <form action="https://echo.htmlacademy.ru" class="sort">
         
           <label>Сортировка:</label>
           <div class="filter">
@@ -108,26 +120,26 @@
       
           <label>Жирность:</label>
           <div class="radio">
-            <input type="radio" name="bluetooth" value="radio"><label>0%</label>
-            <input type="radio" name="bluetooth" value="radio2" checked=""><label>до 10%</label>
-            <input type="radio" name="bluetooth" value="radio3"><label>до 30%</label>
-            <input type="radio" name="bluetooth" value="radio4"><label>Свыше 30%</label>
+            <input name="f-cont" type="radio" value="radio" id="zero"><label for="zero">0%</label>
+            <input name="f-cont" type="radio" value="radio2" checked="" id="l-10"><label for="l-10">до 10%</label>
+            <input name="f-cont" type="radio" value="radio3" id="l-30"><label for="l-30">до 30%</label>
+            <input name="f-cont" type="radio" value="radio4" id="m-30"><label for="m-30">Свыше 30%</label>
           </div>
 
           <label>Наполнители:</label>
           <div class="check"> 
-            <input name="color" type="checkbox" value="check1" checked=""><label>Шоколад</label>
-            <input name="color" type="checkbox" value="check2" checked=""><label>Сахарные присыпки</label>
-            <input name="color" type="checkbox" value="check3"><label>Фрукты</label>
-            <input name="color" type="checkbox" value="check4"><label>Сиропы</label>
-            <input name="color" type="checkbox" value="check5"><label>Джемы</label>
+            <input name="add" type="checkbox" value="check1" id="choco" checked=""><label for="choco">Шоколад</label>
+            <input name="add" type="checkbox" value="check3" id="fruit" checked=""><label for="fruit">Фрукты</label>
+            <input name="add" type="checkbox" value="check4" id="syrop"><label for="syrop">Сиропы</label>
+            <input name="add" type="checkbox" value="check5" id="jam"><label for="jam">Джемы</label>
           </div>
 
-        <button class="btn" type="submit">Применить</button>
+        <button class="button" type="submit">Применить</button>
 
       </form>
     </div>
-    <div class="wrap_items">
+    <div class="wrap_items">     
+      <h2 class="visually-hidden">Ассортимент мороженого</h2>
       <div class="first_col">
         <div class="col_item">
           <img src="img/hit1.png" width="267" height="267" alt="ice_cream">
@@ -210,31 +222,34 @@
 
   	<footer class="main_footer">
 
-  		<div class="footer_social">
-  			<ul>
-  				<li><a class="social_btn social_btn_tw" href="#">Twitter</a></li>
-  				<li><a class="social_btn social_btn_inst" href="#">Instagram</a></li>
-          <li><a class="social_btn social_btn_fb" href="#">Facebook</a></li>
-          <li><a class="social_btn social_btn_vk" href="#">Вконтакте</a></li>               
+      <div class="footer_social">
+        <h3 class="visually-hidden">Список социальных ссылок</h3>
+        <ul>
+          <li><a class="social_btn social_btn_tw" href="#">Twitter</a></li>
+          <li><a class="social_btn social_btn_inst" href="#">Instagram</a></li>
+              <li><a class="social_btn social_btn_fb" href="#">Facebook</a></li>
+              <li><a class="social_btn social_btn_vk" href="#">Вконтакте</a></li>               
         </ul>
       </div>
 
-        <div class="footer_menu">
-        	<ul>
-        		<li><a href="#">Для поставщиков</a>></li>
-        		<li><a href="#">О производстве</a></li>
-        		<li><a href="#">Наши документы</a></li>
-        		<li><a href="#">Экологические стандарты</a></li>
-        	</ul>
-        </div>
+      <div class="footer_menu">
+        <h3 class="visually-hidden">Для поставщиков</h3>
+        <ul>
+          <li><a href="#">Для поставщиков</a>></li>
+          <li><a href="#">О производстве</a></li>
+          <li><a href="#">Наши документы</a></li>
+          <li><a href="#">Экологические стандарты</a></li>
+        </ul>
+      </div>
 
-        <div class="made_in">
-        	<div class="footer_logo">
-        		<a href="#"><img src="#" alt="footer_logo">HTML Academy</a>
-        	</div>
-        	<span>Сделано в <a href="#">HTML Academy</a>&copy;2017</span>
+      <div class="made_in">
+        <h3 class="visually-hidden">Копирайт</h3>
+        <div class="footer_logo">
+          <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="108" height="39" alt="footer_logo">HTML Academy</a>
         </div>
+        <span>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a>&copy;2017</span>
+      </div>
 
-  	</footer>
+    </footer>
   </body>
 </html>

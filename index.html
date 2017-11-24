@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
 
   	<header>
 
   		<div class="header_logo">
+        <h1 class="visually-hidden">Главная страница магазина «Глейси»</h1>
   			<img src="img/logo.svg" width="154" height="64" alt="header_logo">
   		</div>
 
@@ -24,25 +27,24 @@
   					</ul>
   				</li>
   				<li class="menu_nav"><a href="#">Доставка и оплата</a></li>
-  				<li class="menu_nav"><a href="">О компании</a></li>  				
+  				<li class="menu_nav"><a href="#">О компании</a></li>  				
   			</ul>
   		</nav>
 
   		<div class="user_block">
-  		    <form action="search.php" class="finder">
-     		    <input type="search" placeholder="Что ищем?">
+  		    <form action="https://echo.htmlacademy.ru" class="user-block-finder">
+            <label class="visually-hidden" for="search-field">Поиск</label>
+     		    <input type="search"  id="search-field" placeholder="Что ищем?">
      		    <button type="button" name="search"></button>
    		    </form>
-   		    <form action="login.php" class="login">
+   		    <form action="https://echo.htmlacademy.ru" class="user-block-login">
      		    <div class="input_data">
-           			<label for="e-mail"></label>
-           			<label for="password"></label>
+           			<label class="visually-hidden" for="e-mail">Ваша электронная почта</label>
+           			<label class="visually-hidden" for="password">Пароль для электронной почты</label>
            			<input name="mail" placeholder="Электронная почта" id="e-mail">
           			<input name="pass" placeholder="Пароль" id="password">
         		</div>
-     		    <div class="button">
-     		    	<input type="submit" value="Войти">
-     		    </div>
+     		    <input class="button" type="submit" value="Войти">
      		    <ul class="reg">
      		    	<li><a href="#">Забыли пароль?</a></li>
      		    	<li><a href="#">Новая регистрация</a></li>
@@ -50,7 +52,11 @@
    		    </form>
           <a class="user_cart" href="#">Пусто</a>
         </div>
-        <p class="phone">C 10 до 20, ежедневно 8 812 450-25-25</p>
+        <p class="phone-number">
+            <b class="visually-hidden">Наш номер телефона:</b>
+            С 10 до 20, ежедневно<br>
+            <span class="number-itself">8 812 450-25-25</span>
+        </p>
   		
   	</header>
 
@@ -58,7 +64,7 @@
 
   		<div class="wrapper_slider">
         	<div class="slider_control">
-           	    <input type="radio" name="slider" id="slide_1" checked="checked">
+           	  <input type="radio" name="slider" id="slide_1" checked="checked">
            		<input type="radio" name="slider" id="slide_2">
            		<input type="radio" name="slider" id="slide_3">
          	</div>
@@ -69,6 +75,9 @@
                 		<img src="img/ice-cream1.png"  width="1079" height="854" alt="ice_cream1">
                		</div>	
                		<img class="background" src="#" alt="Фон1">
+                  <div class="button">
+                    <a href="#" aria-label="Переход в корзину">Давайте оба!</a>
+                  </div>
             	</div>   
             	<div class="slides slide_2">
                 	<h2>Шоколадный пломбир и лимонный сорбет</h2>
@@ -76,6 +85,9 @@
                			<img src="img/ice-cream2.png"  width="1079" height="854" alt="ice_cream2">
                		</div>	
                		<img class="background" src="#" alt="Фон2">
+                  <div class="button">
+                    <a href="#" aria-label="Переход в корзину">Давайте оба!</a>
+                  </div>
              	</div>
              	<div class="slides slide_3">
                		<h2>Пломбир с помадкой иклубничный щербет</h2>
@@ -83,6 +95,9 @@
                			<img src="img/ice-cream3.png"  width="1079" height="854" alt="ice_cream3">
                		</div>
                		<img class="background" src="#" alt="Фон3">
+                  <div class="button">
+                    <a href="#" aria-label="Переход в корзину">Давайте оба!</a>
+                  </div>
              	</div>
         	</div>
          	<div class="slider-control_buttons">
@@ -90,9 +105,7 @@
            		<label for="slide_2"></label>
            		<label for="slide_3"></label>
          	</div>
-         	<div class="button">
-     		   	<a href="#">Давайте оба!</a>
-     		</div>
+         	
 		</div>
 
 		<div class="banners">
@@ -102,7 +115,7 @@
 				<p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
 				<div class="button_banners">
      		   		<a href="#">Хочу варенья!</a>
-     			</div>
+     		</div>
 			</div>
 			<div class="banners_item">
 				<img src="img/choco.jpg" width="560" height="229" alt="choco">
@@ -110,11 +123,12 @@
 				<p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
 				<div class="button_banners">
      		   		<a href="#">Хочу шоколадки!</a>
-     			</div>
+     		</div>
 			</div>				
 		</div>
 
 		<div class="hits">
+      <h2 class="visually-hidden">Популярные товары</h2>
 			<div class="hits_item">
 				<img src="img/hit1.png" width="267" height="267" alt="ice_cream">
 				<img src="img/hits.png" width="61" height="61" alt="hit">
@@ -142,6 +156,7 @@
 		</div>
 
 		<div class="features">
+      <h2 class="visually-hidden">Преимущества</h2>
 			<h4>Магазин Глейси — это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h4>
 			<div class="features_item">
 				<img src="#" alt="ice_cream">
@@ -176,7 +191,7 @@
 				<img src="img/bg-post.png"  width="560" height="226" alt="blog_back">
 				<p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
 
-				<form action="dispatсh.php">
+				<form action="https://echo.htmlacademy.ru">
 					<label for="news_e-mail"></label>
      		    	<input name="mail" placeholder="Электронная почта" id="news_e-mail">
    		    	</form>
@@ -206,7 +221,7 @@
 
 				<div class="button">
      		    	<input type="button" value="форма обратной связи!">
-     		    </div>
+     		</div>
 
      		</div>			
 		</div>
@@ -214,53 +229,56 @@
 		<div class="write_us_win" id="win_write">
      		<button type="button" name="modal_close"></button>
      		<div class="modal_content">
-       			<form action="review.php" class="write_us">
-         			<div>
-         				<h3>Мы обязательно вам ответим!</h3>
-          			 	<label for="name_write_us"></label>
-          			 	<label for="mail_write_us"></label>
-          			 	<input name="name" placeholder="Как вас зовут?" id="name_write_us">
-           				<input name="mail" placeholder="Ваша почта для ответа?" id="mail_write_us">
-        			</div>
-        			<div>
-          				<label for="comment">Текст письма:</label>
-          				<textarea name="text" placeholder="В свободной форме" id="comment"></textarea>
-        			</div>
-        				<div class="write_us_button">
-          				<input type="submit" value="отправить">
-        			</div>
-       			</form>
-     		</div>
-   		</div>	
+      		<form action="https://echo.htmlacademy.ru" class="write_us">
+       			<div>
+       				<h3>Мы обязательно вам ответим!</h3>
+         			 	<label for="name_write_us"></label>
+         			 	<label for="mail_write_us"></label>
+         			 	<input name="name" placeholder="Как вас зовут?" id="name_write_us">
+         				<input name="mail" placeholder="Ваша почта для ответа?" id="mail_write_us">
+       			</div>
+       			<div>
+         				<label for="comment">Текст письма:</label>
+         				<textarea name="text" placeholder="В свободной форме" id="comment"></textarea>
+       			</div>
+       				<div class="write_us_button">
+         				<input type="submit" value="отправить">
+       			</div>
+      		</form>
+     	</div>
+   	</div>	
 
   	</main>
 
   	<footer class="main_footer">
 
   		<div class="footer_social">
+        <h3 class="visually-hidden">Список социальных ссылок</h3>
   			<ul>
   				<li><a class="social_btn social_btn_tw" href="#">Twitter</a></li>
   				<li><a class="social_btn social_btn_inst" href="#">Instagram</a></li>
             	<li><a class="social_btn social_btn_fb" href="#">Facebook</a></li>
             	<li><a class="social_btn social_btn_vk" href="#">Вконтакте</a></li>               
-        	</ul>
-        </div>
+        </ul>
+      </div>
 
-        <div class="footer_menu">
-        	<ul>
-        		<li><a href="#">Для поставщиков</a>></li>
-        		<li><a href="#">О производстве</a></li>
-        		<li><a href="#">Наши документы</a></li>
-        		<li><a href="#">Экологические стандарты</a></li>
-        	</ul>
-        </div>
+      <div class="footer_menu">
+        <h3 class="visually-hidden">Для поставщиков</h3>
+       	<ul>
+       		<li><a href="#">Для поставщиков</a>></li>
+       		<li><a href="#">О производстве</a></li>
+       		<li><a href="#">Наши документы</a></li>
+       		<li><a href="#">Экологические стандарты</a></li>
+       	</ul>
+      </div>
 
-        <div class="made_in">
-        	<div class="footer_logo">
-        		<a href="#"><img src="#" alt="footer_logo">HTML Academy</a>
-        	</div>
-        	<span>Сделано в <a href="#">HTML Academy</a>&copy;2017</span>
-        </div>
+      <div class="made_in">
+        <h3 class="visually-hidden">Копирайт</h3>
+       	<div class="footer_logo">
+       		<a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="108" height="39" alt="footer_logo">HTML Academy</a>
+       	</div>
+       	<span>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a>&copy;2017</span>
+      </div>
 
   	</footer>
   </body>
